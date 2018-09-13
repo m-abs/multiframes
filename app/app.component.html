@@ -1,0 +1,11 @@
+<!-- https://docs.nativescript.org/angular/core-concepts/angular-navigation.html#page-router-outlet -->
+<GridLayout rows="*, 100" columns="*">
+  <page-router-outlet #tab1 row="0" name="tab1" [class.offscreen]="selectedIndex !== 0"></page-router-outlet>
+  <page-router-outlet #tab2 row="0" name="tab2" [class.offscreen]="selectedIndex !== 1"></page-router-outlet>
+  <page-router-outlet #tab3 row="0" name="tab3" [class.offscreen]="selectedIndex !== 2"></page-router-outlet>
+  <GridLayout row="1" rows="*" columns="*, *, *">
+    <Button col="0" text="Tab 1" (tap)="selectedIndex = 0" [class.active]="selectedIndex !== 0"></Button>
+    <Button col="1" text="Tab 2" (tap)="selectedIndex = 1" [class.active]="selectedIndex !== 1"></Button>
+    <Button col="2" text="Tab 3" (tap)="selectedIndex = 2" [class.active]="selectedIndex !== 2"></Button>
+  </GridLayout>
+</GridLayout>
